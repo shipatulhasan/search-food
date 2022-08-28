@@ -45,7 +45,6 @@ const displayFood = (foods)=>{
 const searchFood = (event)=>{
 
   event.preventDefault()
-
   const searchField =  document.getElementById('search-field')
   const searchValue = searchField.value
   loadFood(searchValue)
