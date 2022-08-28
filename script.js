@@ -7,7 +7,7 @@ const loadFood = async(search)=>{
     displayFood(data.meals)
     
   }
-  catch{
+  catch(error){
     console.log(error)
   }
   
@@ -40,11 +40,17 @@ const displayFood = (foods)=>{
 
 }
 
-const search = (event)=>{
+
+
+const searchFood = (event)=>{
+
   event.preventDefault()
-  const searchField= document.getElementById('search-field')
-  const searchItem = searchField.value
+
+  const searchField =  document.getElementById('search-field')
+  const searchValue = searchField.value
+  loadFood(searchValue)
   searchField.value = ''
-  loadFood(searchItem)
-  
+
 }
+
+
