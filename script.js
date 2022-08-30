@@ -8,6 +8,10 @@ const loadFood = async(search)=>{
     
   }
   catch(error){
+
+    const main = document.getElementById('container')
+    main.innerHTML = `<div class="text-danger text-center"><h5>Result not founded</h5></div>`
+  
     console.log(error)
   }
   
@@ -15,8 +19,8 @@ const loadFood = async(search)=>{
 }
 
 const displayFood = (foods)=>{
-
   const container = document.getElementById('food-container')
+
   container.textContent = ''
 
   foods.forEach(food => {
@@ -43,12 +47,11 @@ const displayFood = (foods)=>{
 
 
 const searchFood = (event)=>{
-
   event.preventDefault()
   const searchField =  document.getElementById('search-field')
   const searchValue = searchField.value
   loadFood(searchValue)
-  searchField.value = ''
+  searchField.value = ''  
 
 }
 
